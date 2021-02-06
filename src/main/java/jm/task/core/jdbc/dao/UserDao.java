@@ -1,5 +1,6 @@
 package jm.task.core.jdbc.dao;
 
+import java.sql.SQLException;
 import jm.task.core.jdbc.model.User;
 
 import java.util.List;
@@ -15,5 +16,5 @@ public interface UserDao {
 
     List<User> getAllUsers();
 
-    void cleanUsersTable();
+    void cleanUsersTable() throws SQLException, ClassNotFoundException;
 }
