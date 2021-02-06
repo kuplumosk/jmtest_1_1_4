@@ -1,25 +1,27 @@
 package jm.task.core.jdbc;
 
+import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 
 public class Main {
 
     public static void main(String[] args) {
-        UserServiceImpl JDBCManipulator = new UserServiceImpl();
+        UserService HibernateManipulator = new UserServiceImpl();
 
-        JDBCManipulator.createUsersTable();
+        HibernateManipulator.createUsersTable();
 
-        JDBCManipulator.saveUser("Timur", "Emelyanov", (byte) 55);
-        JDBCManipulator.saveUser("Stas", "Glivenko", (byte) 29);
-        JDBCManipulator.saveUser("Olga", "Zhabrovich", (byte) 35);
-        JDBCManipulator.saveUser("Zhenya", "Karpluk", (byte) 40);
+        HibernateManipulator.saveUser("Timur", "Emelyanov", (byte) 55);
+        HibernateManipulator.saveUser("Stas", "Glivenko", (byte) 29);
+        HibernateManipulator.saveUser("Olga", "Zhabrovich", (byte) 35);
+        HibernateManipulator.saveUser("Zhenya", "Karpluk", (byte) 40);
 
-        JDBCManipulator.getAllUsers();
+        HibernateManipulator.getAllUsers();
 
-        JDBCManipulator.cleanUsersTable();
+        HibernateManipulator.cleanUsersTable();
 
-        JDBCManipulator.dropUsersTable();
+        HibernateManipulator.dropUsersTable();
 
     }
+
 }
 
